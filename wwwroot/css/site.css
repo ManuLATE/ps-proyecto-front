@@ -1,0 +1,3 @@
+﻿html[data-bs-theme="dark"] body {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/images/fondo.jpg');
+}

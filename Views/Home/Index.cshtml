@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Página principal";
+}
+
+<div class="fondo h-100">
+    <div class="card text-center bg-transparent border-0">
+        <h1 class="card-header bg-transparent border-0 text-danger">Netflix</h1>
+        <div class="card-body">
+            <h2 class="display-5 card-title">Películas y series ilimitadas y mucho más</h2>
+            <p class="card-text lead fw-semibold">Disfruta donde quieras. Cancela cuando quieras.</p>
+            <p class="card-text lead">¿Quieres ver Netflix ya? Presiona el siguiente botón para inciar la experiencia en
+                Netflix.</p>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a asp-controller="Peliculas" class="btn btn-danger">Ver el catálogo de Películas</a>
+            }
+            else
+            {
+                <a asp-controller="Auth" class="btn btn-danger">Comenzar</a>
+            }
+        </div>
+    </div>
+</div>

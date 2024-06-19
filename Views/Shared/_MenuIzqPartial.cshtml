@@ -1,0 +1,16 @@
+﻿@using System.Security.Claims
+
+<div class="me-auto navbar-nav">
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
+        <a class="nav-link" asp-controller="Peliculas" asp-action="Index">Películas</a>
+        @if (User.FindFirstValue(ClaimTypes.Role) == "Administrador")
+        {
+            <a class="nav-link" asp-controller="Categorias" asp-action="Index">Categorías</a>
+            <a class="nav-link" asp-controller="Archivos" asp-action="Index">Archivos</a>
+            <a class="nav-link" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+            <a class="nav-link" asp-controller="Bitacora" asp-action="Index">Bitácora</a>
+        }
+    }
+</div>

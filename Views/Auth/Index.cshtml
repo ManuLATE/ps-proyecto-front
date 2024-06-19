@@ -1,0 +1,32 @@
+@model Login
+@{
+    ViewData["Title"] = "Inicio de sesión";
+}
+
+<form asp-action="Index">
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <h1 class="h3 text-center text-danger">Bienvenido a .Netflix</h1>
+            <h5 class="card-card-title text-center mt-4">@ViewData["Title"]</h5>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" placeholder="Email">
+                <label asp-for="Email" class="form-label"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Password" class="form-control" placeholder="Password">
+                <label asp-for="Password" class="form-label"></label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <p class="card-text small">¿No tienes una cuenta? <a asp-action="Registrar" asp-controller="Auth">Regístrate</a></p>
+        </div>
+        <div class="card-footer text-center">
+            <button type="submit" class="btn btn-danger">Iniciar sesión</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
